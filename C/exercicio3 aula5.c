@@ -1,12 +1,12 @@
 /*Faça um programa que faz a leitura de um vetor X com N inteiros (N deve ser lido tb), com tamanho máximo
-igual a 20. Percorra esse vetor identificando o menor e maior valor. Imprimir o vetor lido e os valores 
-encontrados.*/
+igual a 20. Percorra esse vetor identificando a posição do menor e maior. Imprimir o vetor lido, os índices
+encontrados e respectivos valores.*/
 
 #include <stdio.h>
 
 int main()
 {
-    int i, N, maior, menor;
+    int i, N, maior, menor, vetor_maior, vetor_menor;
     
     printf("Digite o tamanho que deseja para o vetor(menor que 20): ");
     scanf("%i", &N);
@@ -24,17 +24,22 @@ int main()
         if (i==0){
             menor = x[i];
             maior = x[i];
+            vetor_maior = i;
+            vetor_menor = i;
         }
 
         if (x[i]>maior){
             maior = x[i];
+            vetor_maior = i;
         }
 
         if (x[i]<menor){
             menor = x[i];
+            vetor_menor = i;
         }
     }
 
-    printf("O valor maior foi: %i\nE o menor foi: %i", maior, menor);
+    printf("O valor maior foi: %i na posicao %i\n", maior, vetor_maior);
+    printf("O valor menor foi: %i na posicao %i\n", menor, vetor_menor);
     return 0;
 }
