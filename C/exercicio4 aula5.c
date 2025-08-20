@@ -25,9 +25,10 @@ int main()
         y[i] = x[N-1-i];
         }
 
-    printf("\nX  Y\n");
+    printf("\nX Y\n");
+
     for(i=0; i<N; i++){
-        printf("\n%i  %i\n", x[i], y[i]);
+        printf("\n%i %i\n", x[i], y[i]);
     }
 
     return 0;
