@@ -1,3 +1,7 @@
+/*Faça um programa que faz a leitura de dois vetores X e Y, ambos com N reais (N deve ser lido tb), 
+com tamanho máximo igual a 20. Efetue a multiplicação dos respectivos pares de elementos de X por Y, 
+gerando um terceiro vetorZ. Imprima os vetores X, Y e Z.*/
+
 #include <stdio.h>
 
 int main()
