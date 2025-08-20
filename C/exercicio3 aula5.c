@@ -39,7 +39,7 @@ int main()
         }
     }
 
-    printf("O valor maior foi: %i na posicao %i\n", maior, vetor_maior);
-    printf("O valor menor foi: %i na posicao %i\n", menor, vetor_menor);
+    printf("O valor maior foi: %i na posicao [%i]\n", maior, vetor_maior);
+    printf("O valor menor foi: %i na posicao [%i]\n", menor, vetor_menor);
     return 0;
 }
