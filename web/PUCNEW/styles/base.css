@@ -53,11 +53,47 @@ p{
     color: cornflowerblue;
 }
 #content{
-    /*border: 3px solid black;*/
-    /*background-color: green;*/
+    
 }
 
 #footer{
-    /*border: 3px solid violet;*/
+    background-color: #f3f3f3;
+    padding: 20px;
+}
+
+#sitemap{
+    display: inline-flex;
+    width: 100%;
+}
+
+#sitemap ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 33%;
+}
+
+#sitemap ul p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+}
+
+#sitemap ul li{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#sitemap ul li a{
+    color: black;
+    text-decoration: none;
+}
+#sitemap ul li a:hover{
+    text-decoration: underline;
+}
+
+#social, #companylinks, #rightsbar{
+    display: none;
 }
 
