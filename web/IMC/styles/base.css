@@ -15,3 +15,17 @@ label{
     font-style: italic;
     color: gray;
 }
+ 
+.warning {
+    color: red;
+    margin: 0;
+}
+
+.warning.mostrar {
+    margin-bottom: 30px;
+}
+
+#resultado{
+    color: red;
+    font-size: larger;
+}
