@@ -2,5 +2,14 @@
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
-    
+}
+
+#name, #email, #mensagem, #btnEnviar{
+    margin: 10px;
+    border-radius: 30px;
+}
+
+#btnEnviar{
+    border-color: green;
+    background-color: greenyellow;
 }
