@@ -134,10 +134,51 @@ void ordenarcrescente(int sz, int vec[sz]){
         }
     }
 }
-int main(){
-    int vec[5] = {1, 6, 2, 8, 4};
-    ordenarcrescente(5, vec);
-    for (int i = 0; i<5; i++){
-        printf("%i ", vec[i]);
+
+
+//exercicio 13
+void separaparimpar(int sz, int vec[sz], int vPar[], int vImpar[], int *szPar, int *szImpar) {
+    *szPar = 0;
+    *szImpar = 0;
+    for (int i = 0; i < sz; i++) {
+        if (vec[i] % 2 == 0) {
+            vPar[*szPar] = vec[i];
+            (*szPar)++;
+        } else {
+            vImpar[*szImpar] = vec[i];
+            (*szImpar)++;
+        }
     }
+}
+
+// exercicio 14
+void PrintMatrix(int nRows, int nCols, int matrix[nRows][nCols]){
+    for (int i = 0; i<nRows; i++){
+        for(int j = 0; j<nCols; j++){
+            printf("%i ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+// exercicio 15
+bool MultMatrix(int linhasA, int colunasA, int A[linhasA][colunasA], int linhasB, int colunasB, int B[linhasB][colunasB], int Mult[linhasA][colunasB]){
+    if(colunasA != linhasB){
+        return false;
+    }
+    else{
+        for (int i = 0; i<linhasA; i++){
+            for (int j = 0; j<colunasB; j++){
+                Mult[i][j] = 0;
+                for (int k = 0; k<colunasA; k++){
+                    Mult[i][j] += A[i][k] * B[k][j];
+                }
+            }
+        }
+        return true;
+    }
+}
+
+int main(){
+
 }
