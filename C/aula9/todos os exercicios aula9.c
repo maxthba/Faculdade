@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include <string.h>
+#include <ctype.h>
 
 // exercicio 1
 int par(int a){
@@ -28,7 +28,7 @@ double fracio(double a){
     return ((double)a - (int)inteiro);
 }
 
-//exercicio3
+//exercicio 3
 int fat(int a){
     int soma=0;
     for (int i = 0; i<=a; i++){
@@ -37,7 +37,7 @@ int fat(int a){
     return soma;
 }
 
-//exercicio4
+//exercicio 4
 int num_pares (int a, int b){
     int contador = 0;
     for (int i=a; i<b; i++){
@@ -48,12 +48,17 @@ int num_pares (int a, int b){
     return contador;
 }
 
-//exercicio5
+//exercicio 5
 int tam_str (char string[]){
-    return strlen(string);
+    int tamanho = 0;
+    while (string[tamanho] != '\0') {
+    tamanho++;
+    }
+    return tamanho;
+    
 }
 
-//exercicio6
+//exercicio 6
 int qnt_char (char string[], char a){
     int qnt = 0;
     for (int i =0; string[i] != '\0'; i++){
@@ -64,18 +69,43 @@ int qnt_char (char string[], char a){
     return qnt;
 }
 
-//exercicio7
+//exercicio 7
 void cop_str(char origem[], char destino[]){
-    int tamanho = strlen(destino);
-    strncpy(destino, origem, sizeof(tamanho));
-    destino[tamanho-1] = '\0';
+    int i = 0;
+    while (origem[i] != '\0'){
+        destino[i] = origem[i];
+        i++;
+    }
+    destino[i] = '\0';
+}
+
+//exercicio 8
+int palindromo(char string[]) {
+    int tamanho = tam_str(string);
+    char string_inversa[tamanho + 1];
+    int i;
+    for (i = 0; i < tamanho; i++) {
+        string_inversa[i] = string[tamanho - i - 1];
+    }
+    string_inversa[i] = '\0';
+
+    for (i = 0; i < tamanho; i++) {
+        if (string[i] != string_inversa[i]) {
+            return 0;
+        }
+    }
+    return 1;
+}
+
+//exercicio 9 
+void upper(char string[]){
+    for (int i = 0; string[i]!=0; i++){
+        string[i] = toupper(string[i]);
+    }
 }
 int main(){
-    char string_org[] ="oi tudo bem";
-    char string_destino[strlen(string_org)+1];
-    cop_str(string_org, string_destino);
-
-    printf("String de origem: %s\n", string_org);
-    printf("String de destino: %s\n", string_destino);
+    char string[] = "max";
+    upper(string);
+    printf("%s", string);
     return 0;
 }
