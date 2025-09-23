@@ -111,8 +111,12 @@ void printvector(int sz, int vec[sz]){
     }
 }
 
+//exercicio 11
+void swap(int*a, int*b){
+    int trocar = *a;
+    *a = *b;
+    *b = trocar;
+}
+
 int main(){
-    int vec[3] = {1, 2, 3};
-    printvector(3, vec);
-    return 0;
 }
