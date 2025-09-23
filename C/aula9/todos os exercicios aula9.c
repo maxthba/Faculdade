@@ -3,21 +3,19 @@
 #include <ctype.h>
 
 // exercicio 1
-int par(int a){
-    bool par;
+bool par(int a){
     if(a%2==0){
-        par = true;
+        return true;
     }
     else{
-        par = false;
+        return false;
     }
-    return par;
 }
 
 //exercicio 2
 double num_real(){
     double real;
-    printf("Digite um numero real: ");
+    printf("\nDigite um numero real: ");
     scanf("%lf", &real);
 
     return real;
@@ -179,6 +177,56 @@ bool MultMatrix(int linhasA, int colunasA, int A[linhasA][colunasA], int linhasB
     }
 }
 
-int main(){
+// exercicio 16
+void EscolherExercicio(){
+    int opcao;
+    do {
+        printf("\nMenu:\n"
+        "1 - Retorna se o numero inteiro eh par.\n"
+        "2 - Le um numero real e retorna a parte fracionada.\n"
+        "3 - Retorna o fatorial de um inteiro positivo.\n"
+        "4 - Escreve pares entre a e b.\n"
+        "5 - Retorna o tamanho da string.\n"
+        "6 - Retorna a quantidade de vezes que um caractere aparece na string.\n"
+        "7 - Copia uma string para outra.\n"
+        "8 - Retorne se a string eh um palindromo.\n"
+        "9 - Converte todos os caracteres para maiusculo.\n"
+        "10 - Imprime um vetor.\n"
+        "11 - Faz o swap entre dois inteiros.\n"
+        "12 - Ordenar um vetor em ordem crescente.\n"
+        "13 - Separa elementos de um vetor em pares e impares.\n"
+        "14 - Imprime uma matriz.\n"
+        "15 - Multiplicacao de matriz\n"
+        "0 - sair\n\n"
+        "Digite a opcao que deseja: ");
+        scanf("%i", &opcao);
+        getchar();
+        switch(opcao){
+            case 1: {
+                int a;
+                printf("\ndigite um numero inteiro: ");
+                scanf("%i", &a);
 
+                bool ehpar = par(a);
+                if (ehpar){
+                    printf("\nEh par!!\n");
+                }
+                else {
+                    printf("\nNao eh par!!\n");
+                }
+                break;
+            }
+            
+            case 2 : {
+                double numero = num_real();
+                double parte_fracionada = fracio(numero);
+                printf("\nParte fracionada: %lf\n", parte_fracionada);
+                break;
+            }
+        }
+    } while(opcao != 0);
+}
+
+int main(){
+    EscolherExercicio();
 }
