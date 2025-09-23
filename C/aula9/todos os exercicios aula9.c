@@ -118,5 +118,26 @@ void swap(int*a, int*b){
     *b = trocar;
 }
 
+//exercicio 12
+void ordenarcrescente(int sz, int vec[sz]){
+    int troca;
+    bool swap = true;
+    while (swap){
+        swap = false;
+        for(int i = 0; i<=sz-1; i++){
+            if(vec[i]>vec[i+1]){
+                troca=vec[i];
+                vec[i]=vec[i+1];
+                vec[i+1]=troca;
+                swap = true;
+            }
+        }
+    }
+}
 int main(){
+    int vec[5] = {1, 6, 2, 8, 4};
+    ordenarcrescente(5, vec);
+    for (int i = 0; i<5; i++){
+        printf("%i ", vec[i]);
+    }
 }
