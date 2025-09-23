@@ -103,9 +103,16 @@ void upper(char string[]){
         string[i] = toupper(string[i]);
     }
 }
+
+//exercicio 10
+void printvector(int sz, int vec[sz]){
+    for (int i=0; i<sz; i++){
+        printf("%i\n", vec[i]);
+    }
+}
+
 int main(){
-    char string[] = "max";
-    upper(string);
-    printf("%s", string);
+    int vec[3] = {1, 2, 3};
+    printvector(3, vec);
     return 0;
 }
