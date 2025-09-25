@@ -199,6 +199,7 @@ void EscolherExercicio(){
                 int a;
                 printf("\ndigite um numero inteiro: ");
                 scanf("%i", &a);
+                getchar(); // consome o \n deixado pelo scanf
 
                 bool ehpar = par(a);
                 if (ehpar){
@@ -214,6 +215,7 @@ void EscolherExercicio(){
             
             case 2: {
                 double numero = num_real();
+                getchar(); // consome o \n deixado pelo scanf em num_real()
                 double parte_fracionada = fracio(numero);
                 printf("\nParte fracionada: %lf\n", parte_fracionada);
                 printf("\nPressione Enter para continuar...");
@@ -225,6 +227,7 @@ void EscolherExercicio(){
                 int numero;
                 printf("\nDigite um numero inteiro: ");
                 scanf("%i", &numero);
+                getchar(); // consome o \n deixado pelo scanf
                 int fatorial = fat(numero);
                 printf("\nO fatorial de %i eh: %i\n", numero, fatorial);
                 printf("\nPressione Enter para continuar...");
@@ -238,6 +241,7 @@ void EscolherExercicio(){
                 scanf("%i", &num1);
                 printf("\nDigite o numero de final: ");
                 scanf("%i", &num2);
+                getchar(); // consome o \n deixado pelo scanf
 
                 int pares = num_pares(num1, num2);
                 printf("\n A quantidade de pares entre %i e %i eh: %i\n", num1, num2, pares);
@@ -332,6 +336,7 @@ void EscolherExercicio(){
                     printf("\nDigite o valor [%i]: ", i);
                     scanf("%i", &vetor[i]);
                 }
+                getchar(); // consome o \n deixado pelo último scanf
                 printf("\n");
                 printvector(N, vetor);
                 printf("\nPressione Enter para continuar...");
@@ -345,6 +350,7 @@ void EscolherExercicio(){
                 scanf("%i", &a);
                 printf("\nDigite o numero b: ");
                 scanf("%i", &b);
+                getchar(); // consome o \n deixado pelo scanf
                 int *A = &a;
                 int *B = &b;
                 swap(A, B);
@@ -366,6 +372,7 @@ void EscolherExercicio(){
                     printf("\nDigite o valor de vetor[%i]: ", i);
                     scanf("%i", &vetor[i]);
                 }
+                getchar(); // consome o \n deixado pelo último scanf
                 ordenarcrescente(N, vetor);
                 printf("\nVetor orneado: ");
                 printf("\n");
@@ -385,6 +392,7 @@ void EscolherExercicio(){
                     printf("\nDigite o valor de vetor[%i]: ", i);
                     scanf("%i", &vetor[i]);
                 }
+                getchar(); // consome o \n deixado pelo último scanf
                 
                 int szPar, szImpar;
                 int vetpar[N], vetimpar[N]; // tamanho máximo N
@@ -416,6 +424,7 @@ void EscolherExercicio(){
                         scanf("%i", &matriz[i][j]);
                     }
                 }
+                getchar(); // consome o \n deixado pelo último scanf
                 printf("\n");
                 printf("Matriz: \n");
                 PrintMatrix(l, c, matriz);
@@ -446,13 +455,14 @@ void EscolherExercicio(){
                 printf("\nDefina a ordem de colunas da matriz2: ");
                 scanf("%i", &c2);
 
-                int matriz2[l1][c1];
+                int matriz2[l2][c2]; // corrigido: era [l1][c1]
                 for(int i=0; i<l2; i++){
                     for (int j=0; j<c2; j++){
                         printf("Digite o valor [%i][%i]: ", i, j);
                         scanf("%i", &matriz2[i][j]);
                     }
                 }
+                getchar(); // consome o \n deixado pelo último scanf
                 
                 int matriz_mult[l1][c2];
                 bool mult = MultMatrix(l1, c1, matriz1, l2, c2, matriz2, matriz_mult);
@@ -460,8 +470,11 @@ void EscolherExercicio(){
                     printf("\nMatriz resultado:\n");
                     PrintMatrix(l1, c2, matriz_mult);
                 }
+                else{
+                    printf("\nNão é possível multiplicar as matrizes (colunas da matriz1 != linhas da matriz2)\n");
+                }
                 printf("\nPressione Enter para continuar...");
-                getchar();
+                getchar(); // corrigido: era scanf()
                 break;
             }
 
