@@ -10,7 +10,7 @@ int main(){
     A = B;
     B = temp;
 
-    printf("A = %i \n B = %i", A, B );
+    printf("A = %i \nB = %i", A, B );
 
     return 0;
 }
