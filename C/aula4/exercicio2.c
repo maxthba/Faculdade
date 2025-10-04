@@ -7,10 +7,11 @@ int main(){
     {
         printf("Digite um numero: ");
         scanf("%i", &num);
+        qnt += 1;
+
         if (num == 0){
             break;
         }
-        qnt += 1;
 
         if(maior<num){
             maior=num;
