@@ -50,7 +50,7 @@ int num_pares (int a, int b){
 int tam_str (char string[]){
     int tamanho = 0;
     while (string[tamanho] != '\0') {
-    tamanho++;
+        tamanho++;
     }
     return tamanho;
     

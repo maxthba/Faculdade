@@ -13,7 +13,7 @@ int main()
     primeira = string[0];
     ultima = string [tamanho-1];
 
-    printf("string final: %s\ntamanho: %i\nprimeira: %c segunda: %c", string, tamanho, primeira, ultima);
+    printf("string final: %s\ntamanho: %i\nprimeira: %c ultima: %c", string, tamanho, primeira, ultima);
 
     return 0;
 }
