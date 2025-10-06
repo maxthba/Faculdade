@@ -50,7 +50,7 @@ bool demaior(struct pessoa p1){
 //6
 void mostra (int tamanho_vet, struct pessoa p[tamanho_vet]){
     for(int i = 0; i<tamanho_vet; i++){
-        printf("%d. %s\n", i, p[i].nome);
+        printf("%d %s\n", i, p[i].nome);
     }
 }
 
@@ -221,57 +221,6 @@ void alteracao(struct loja*loja){
 }
 
 int main(){
-    // Testando as funções da loja
-    printf("=== SISTEMA DE LOJA ===\n");
-    
-    struct loja minha_loja;
-    minha_loja.total = 0;
-    
-    // Cadastra produtos
-    printf("1. Cadastrando produtos:\n");
-    cadastrar(&minha_loja);
-    
-    // Mostra produtos cadastrados
-    printf("\n2. Produtos cadastrados:\n");
-    for(int i = 0; i < minha_loja.total; i++){
-        printf("\nProduto %d:\n", i+1);
-        printf("Codigo: %d\n", minha_loja.produtos[i].codigo);
-        printf("Nome: %s\n", minha_loja.produtos[i].nome);
-        printf("Preco: R$ %.2lf\n", minha_loja.produtos[i].preco);
-        printf("Quantidade: %d\n", minha_loja.produtos[i].quantidade);
-    }
-    
-    // Teste de busca
-    printf("\n3. Testando busca de produto:\n");
-    int codigo_teste;
-    printf("Digite o codigo para buscar: ");
-    scanf("%d", &codigo_teste);
-    
-    struct produto* resultado = prod_busca(&minha_loja, codigo_teste);
-    
-    if(resultado != NULL){
-        printf("\nProduto encontrado:\n");
-        printf("Codigo: %d\n", resultado->codigo);
-        printf("Nome: %s\n", resultado->nome);
-        printf("Preco: R$ %.2lf\n", resultado->preco);
-        printf("Quantidade: %d\n", resultado->quantidade);
-    } else {
-        printf("\nProduto com codigo %d nao encontrado!\n", codigo_teste);
-    }
-    
-    // Teste de alteração de quantidade
-    printf("\n4. Testando alteracao de quantidade:\n");
-    alteracao(&minha_loja);
-    
-    // Mostra produtos após alteração
-    printf("\n5. Produtos apos alteracao:\n");
-    for(int i = 0; i < minha_loja.total; i++){
-        printf("\nProduto %d:\n", i+1);
-        printf("Codigo: %d\n", minha_loja.produtos[i].codigo);
-        printf("Nome: %s\n", minha_loja.produtos[i].nome);
-        printf("Preco: R$ %.2lf\n", minha_loja.produtos[i].preco);
-        printf("Quantidade: %d\n", minha_loja.produtos[i].quantidade);
-    }
     
     return 0;
 }
