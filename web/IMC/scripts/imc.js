@@ -23,13 +23,13 @@
                     document.getElementById("resultado").textContent = "IMC : " + CalcularIMC(p, a).toFixed(2);
                     for (let i = 0; i<aviso.length; i++){
                         aviso[i].textContent = " ";
-                        aviso[i].classList.remove("mostrar")
+                        aviso[i].classList.remove("mostrar");
                     }
                 }
                 else{
                     for (let i = 0; i<aviso.length; i++){
                         aviso[i].textContent = "digite um valor valido!!!";
-                        aviso[i].classList.add("mostrar")
+                        aviso[i].classList.add("mostrar");
                     }
                 }
             }
