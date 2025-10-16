@@ -1,0 +1,16 @@
+Tarefas para casa
+
+1 - Criar uma conta na Nuvem da Oracle
+(OCI - Oracle Cloud infrastructure) cloud.oracle.com
+clicar no botao Sing in. (vai precisar de cartao)
+
+2 - Ao entrar na sua conta, acesse o menu da OCI a opção Autonomus Database (banco de dados oracle na nuvem)
+
+3 - Crie uma instancia oracle autonoma (create instance ou crate database)
+
+4 - Ao criar a instancia, acesse as configurações dela e clique no botão Database Connection e baixe a wallet 
+(colocando uma senha qualquer para cirptografar a carteira de certificados de acesso)
+
+5 - No seu vscode instale a extensão da Oracle, (Oracle SQL Developer da prorpia oracle)
+
+6 - conecte na sua instancia Oracle Autonoma para testar...
