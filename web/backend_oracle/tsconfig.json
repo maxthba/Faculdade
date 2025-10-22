@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    // opcoes basicas
+    "target": "es2020",
+    "module": "commonjs",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "strict": true,
+
+    // opcoes de caminhos para resolucao dos modulos
+    "baseUrl": "./src",
+
+    //outras opcoes necessarias
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
