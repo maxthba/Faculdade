@@ -161,6 +161,9 @@ void menu(){
                 getchar(); // Espera o Enter
                 break;
             }
+            case 0: {
+                break;
+            }
             default:
                 break;
         }
