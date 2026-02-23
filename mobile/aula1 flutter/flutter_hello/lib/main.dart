@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         //
         // isso funciona para codigos tambem, nao apenas valores: a maioria das mudancas de codigos podem ser
         // testadas apenas com um hot relaod.
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: .fromSeed(seedColor: const Color.fromARGB(255, 138, 27, 7)),
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -78,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // tente isso: tente mudar a cor aqui para uma cor especifica (para
         // Colors.amber, talvez?) e ativar um hot reload para ver a AppBar
         // mudar de cor enquanto as outras cores continuam a mesma.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Theme.of(context).color.amber,
         // aqui tiramos valor do MyHomePage object que foi criado pelo
         // metodo App.build , e usado apra setar a nossa appbar.
         title: Text(widget.title),
