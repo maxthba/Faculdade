@@ -1,8 +1,8 @@
 class Carro {
   String? marca;
   String? modelo;
-  int anoFabricacao;
-  int anoModelo;
+  int? anoFabricacao;
+  int? anoModelo;
   String? chassi;
 
   //construtor (torna valores obrigatorios)
@@ -20,12 +20,12 @@ class Carro {
     print('Marca: ${marca}');
     print('Modelo: ${modelo}');
     print('Ano de fabricacao: ${anoFabricacao}');
-    if(anoModelo === NULL){
+    if(anoModelo == null){
       print('Ano de modelo nao informado');
     } else{
       print('Ano do modelo: ${anoModelo}');
     }
-    if(chassi === NULL){
+    if(chassi == null){
       print('Chassi nao informado');
     } else{
       print('Chassi: ${chassi}');
@@ -34,7 +34,7 @@ class Carro {
 }
 
 void main(){
-  Carro c1 =Carro('Toyota', 'Yaris', 2023);
+  Carro c1 = Carro('Toyota', 'Yaris', 2023);
   Carro c2 = Carro('', '', -1900);
   c1.imprimir();
   c2.imprimir();

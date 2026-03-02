@@ -21,7 +21,7 @@ class Lampada {
   int id;
   String modelo;
   StatusLampada status;
-  Lampada(this.id, this.status);
+  Lampada(this.id, this.modelo, this.status);
 
   bool equals(Lampada outra){
     if(outra.id == this.id){
