@@ -30,6 +30,16 @@ class cat extends Animal{
   }
 }
 
+ class duck extends Animal{
+  @override
+  void show(){
+    super.show();
+    print('nadando no lago... parou no centro...');
+  }
+  void quack(){
+    print('quaaaack....');
+  }
+ }
 void main(){
   var c = cat();
   c.show();
@@ -41,5 +51,11 @@ void main(){
   d.show();
   d.bark();
   d.hide();
+  print('opções de palavras para a criança clicar');
+
+  var du = duck();
+  du.show();
+  du.quack();
+  du.hide();
   print('opções de palavras para a criança clicar');
 }
