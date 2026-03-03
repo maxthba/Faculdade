@@ -16,19 +16,40 @@ class Carro {
     print('Ano do modelo: ${anoModelo}');
     print('chassi: ${chassi}');
   }*/
-  void imprimir(){
-    print('Marca: ${marca}');
-    print('Modelo: ${modelo}');
-    print('Ano de fabricacao: ${anoFabricacao}');
-    if(anoModelo == null){
-      print('Ano de modelo nao informado');
-    } else{
-      print('Ano do modelo: ${anoModelo}');
+
+  bool isvalid(){
+    if(marca == null || marca!.isEmpty){
+      return false;
     }
-    if(chassi == null){
-      print('Chassi nao informado');
+    if(modelo == null || modelo!.isEmpty){
+      return false;
+    }
+    if(anoFabricacao == null || anoFabricacao! < 1886 || anoFabricacao! > 2100){
+      return false;
+    }
+    if(anoModelo != null && (anoModelo! < 1886 || anoModelo! > 2100)){
+      return false;
+    }
+    return true;
+  }
+
+  void imprimir(){
+    if(isvalid()){
+      print('Marca: ${marca}');
+      print('Modelo: ${modelo}');
+      print('Ano de fabricacao: ${anoFabricacao}');
+      if(anoModelo == null){
+        print('Ano de modelo nao informado');
+      } else{
+        print('Ano do modelo: ${anoModelo}');
+      }
+      if(chassi == null){
+        print('Chassi nao informado');
+      } else{
+        print('Chassi: ${chassi}');
+      }
     } else{
-      print('Chassi: ${chassi}');
+      print('carro da marca :${marca}. Modelo ${modelo}. eh invalido');
     }
   }
 }
