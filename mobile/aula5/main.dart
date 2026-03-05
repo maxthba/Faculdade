@@ -49,6 +49,15 @@ void main(){
   }
 }
 
+abstract class MeioDeTransporte {}
+abstract class Terrestre extends MeioDeTransporte {}
+class Automovel extends Terrestre {}
+class Motocicleta extends Terrestre {}
+class aeronave extends MeioDeTransporte {}
+class embarcacao extends MeioDeTransporte {}
+
+// fazer um main que crie uma Frota.
+
 /*void main(){
     // entendendo comparações
     //string internig 
