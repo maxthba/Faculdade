@@ -1,19 +1,10 @@
-class Pessoa {
-    String nome;
-    double peso;
-    double altura;
-    double? imc;
-
-    Pessoa(this.nome, this.peso, this.altura){
-        this.calcularImc();
-    }
-
-    void calcularImc(){
-        this.imc = (this.peso / (this.altura * this.altura));
-    }
-}
+import 'Pessoa.dart';
 
 void main(){
     Pessoa p1 = Pessoa('Max', 60, 1.76);
+    print(p1.imc);
+    //nao da para alterar mais imc
+    p1.imc = 10;
+    p1._imc = 10;
     
 }
