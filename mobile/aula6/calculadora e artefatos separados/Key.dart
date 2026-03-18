@@ -1,3 +1,6 @@
+import 'KeyType.dart';
+import 'CalcAction.dart';
+
 class Key {
   final String label;
   final KeyType type;

@@ -1,4 +1,3 @@
-
 class Pessoa {
     final String nome;
     final double peso;
