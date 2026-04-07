@@ -14,16 +14,16 @@ class Veiculo {
     }
   }
 
-  @override
-  bool operator ==(Object other) {
-      if(identical(this, other) ||
-      (other is Veiculo &&
-          this.renavam == other.renavam &&
-          this.chassi == other.chassi)){
-            return true;
-          } 
-          return false;
-  }
+  // @override
+  // bool operator ==(Object other) {
+  //     if(identical(this, other) ||
+  //     (other is Veiculo &&
+  //         this.renavam == other.renavam &&
+  //         this.chassi == other.chassi)){
+  //           return true;
+  //         } 
+  //         return false;
+  // }
 }
 
 void main(){
