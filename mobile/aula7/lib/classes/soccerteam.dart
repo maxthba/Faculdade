@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 class SoccerTeam {
   final String name;
   final int foundationYear;

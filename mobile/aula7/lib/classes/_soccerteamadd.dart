@@ -1,6 +1,5 @@
-import 'soccerteamadd.dart';
-import 'package:flutter/material.dart';
-import 'soccerteam.dart';
+part of 'soccerteamadd.dart';
+
 class _SoccerTeamAddState extends State<SoccerTeamAdd> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _nameController = TextEditingController();

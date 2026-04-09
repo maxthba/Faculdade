@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-
-import 'soccerteam.dart';
-import 'soccerteamadd.dart';
-import 'soccerteamlist.dart';
+part of 'soccerteamlist.dart';
 
 class _SoccerTeamListState extends State<SoccerTeamList> {
   final List<SoccerTeam> _teams = [];

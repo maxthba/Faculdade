@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import '_soccerteamlistate.dart';
+import 'soccerteam.dart';
+import 'soccerteamadd.dart';
+
+part '_soccerteamlistate.dart';
+
 class SoccerTeamList extends StatefulWidget {
   const SoccerTeamList({super.key});
 
