@@ -26,7 +26,9 @@ class MyApp extends StatelessWidget {
         //
         // isso funciona para codigos tambem, nao apenas valores: a maioria das mudancas de codigos podem ser
         // testadas apenas com um hot relaod.
-        colorScheme: .fromSeed(seedColor: const Color.fromARGB(255, 183, 77, 58)),
+        colorScheme: .fromSeed(
+          seedColor: const Color.fromARGB(255, 183, 77, 58),
+        ),
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -37,7 +39,7 @@ class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
   // esse widget eh a home page do seu aplicativo. eh estatal, significa
-  // que tem um estado de objeto (definido abaixo) que contem campos que afeta 
+  // que tem um estado de objeto (definido abaixo) que contem campos que afeta
   // como se parece.
 
   // essa classe eh a configuracao do estado. guarda um valor (nesse caso
@@ -57,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void _incrementCounter() {
     setState(() {
       // essa chamada para o setState diz para o Flutter framework que algo
-      // mudou nesse estado, o que ocasiona em uma rerun do metodo de build abaixo 
+      // mudou nesse estado, o que ocasiona em uma rerun do metodo de build abaixo
       // para que o display possa mostrar os valores atualizados. se mudarmos
       // _counter sem chamar  setState(), entao o metodo de build nao vai ser chamado
       // novamente, e parecera que nada aconteceu.
