@@ -13,6 +13,9 @@ class TeamApiService {
   static final Uri _showTimesUrl = Uri.parse(
     'https://showtimes-tm3t3magva-rj.a.run.app',
   );
+  static final Uri _deleteTimeUrl = Uri.parse(
+    'https://southamerica-east1-meu-projeto-max.cloudfunctions.net/deleteTime',
+  );
 
   static Future<List<SoccerTeam>> fetchTeams() async {
     final response = await http.get(_showTimesUrl);
@@ -39,13 +42,18 @@ class TeamApiService {
           final dynamic rawName = item['nome'] ?? item['name'] ?? '';
           final dynamic rawYear =
               item['anoFundacao'] ?? item['foundationYear'] ?? 0;
+          final String hash = (item['hash'] ?? item['id'] ?? '').toString();
 
           final String name = rawName.toString();
           final int year = rawYear is int
               ? rawYear
               : int.tryParse(rawYear.toString()) ?? 0;
 
-          return SoccerTeam(name: name, foundationYear: year);
+          return SoccerTeam(
+            hash: hash,
+            name: name,
+            foundationYear: year,
+          );
         })
         .toList();
   }
@@ -62,6 +70,18 @@ class TeamApiService {
 
     if (response.statusCode < 200 || response.statusCode >= 300) {
       throw Exception('Falha ao adicionar time (${response.statusCode}).');
+    }
+  }
+
+  static Future<void> deleteTeam(String hash) async {
+    final response = await http.post(
+      _deleteTimeUrl,
+      headers: {'Content-Type': 'application/json'},
+      body: jsonEncode({'hash': hash}),
+    );
+
+    if (response.statusCode < 200 || response.statusCode >= 300) {
+      throw Exception('Falha ao apagar time (${response.statusCode}).');
     }
   }
 }

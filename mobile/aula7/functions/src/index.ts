@@ -48,7 +48,10 @@ export const showTimes = onRequest(
     const times: FirebaseFirestore.DocumentData[] = [];
     const snapshot = await colTimes.get();
     snapshot.forEach((doc) => {
-      times.push(doc.data());
+      times.push({
+        hash: doc.id,
+        ...doc.data(),
+      });
     });
     response.status(200).json(times);
   },

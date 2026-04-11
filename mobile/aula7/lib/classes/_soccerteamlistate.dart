@@ -92,13 +92,59 @@ class _SoccerTeamListState extends State<SoccerTeamList> {
         padding: const EdgeInsets.all(12),
         itemBuilder: (context, index) {
           final team = _teams[index];
-          return Card(
-            key: ValueKey('${team.name}-${team.foundationYear}-$index'),
-            margin: const EdgeInsets.symmetric(vertical: 8),
-            child: ListTile(
-              title: Text(team.name),
-              subtitle: Text('Fundado em ${team.foundationYear}'),
-              leading: const Icon(Icons.sports_soccer),
+          return Dismissible(
+            key: ValueKey(team.hash.isEmpty
+                ? '${team.name}-${team.foundationYear}-$index'
+                : team.hash),
+            direction: DismissDirection.startToEnd,
+            background: Container(
+              color: Colors.red,
+              alignment: Alignment.centerLeft,
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: const Icon(Icons.delete, color: Colors.white),
+            ),
+            confirmDismiss: (direction) async {
+              if (team.hash.isEmpty) {
+                return false;
+              }
+
+              final messenger = ScaffoldMessenger.of(context);
+
+              try {
+                await TeamApiService.deleteTeam(team.hash);
+                await _loadTeams();
+                if (!mounted) {
+                  return false;
+                }
+                messenger
+                  ..clearSnackBars()
+                  ..showSnackBar(
+                    SnackBar(
+                      content: Text('Time "${team.name}" removido.'),
+                    ),
+                  );
+                return true;
+              } catch (_) {
+                if (!mounted) {
+                  return false;
+                }
+                messenger
+                  ..clearSnackBars()
+                  ..showSnackBar(
+                    const SnackBar(
+                      content: Text('Erro ao remover no servidor.'),
+                    ),
+                  );
+                return false;
+              }
+            },
+            child: Card(
+              margin: const EdgeInsets.symmetric(vertical: 8),
+              child: ListTile(
+                title: Text(team.name),
+                subtitle: Text('Fundado em ${team.foundationYear}'),
+                leading: const Icon(Icons.sports_soccer),
+              ),
             ),
           );
         },
