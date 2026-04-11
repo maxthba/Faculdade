@@ -32,3 +32,24 @@ export const addTime = onRequest(
     }
   }
 );
+
+export const deleteTime = onRequest(
+  {region: "southamerica-east1", invoker: "public"},
+  async (_request, response) => {
+    const timeId = _request.body?.hash;
+    await colTimes.doc(timeId).delete();
+    response.send("Exclusao -  provavelmente - realizada");
+  },
+);
+
+export const showTimes = onRequest(
+  {region: "southamerica-east1", invoker: "public"},
+  async (_request, response) => {
+    const times: FirebaseFirestore.DocumentData[] = [];
+    const snapshot = await colTimes.get();
+    snapshot.forEach((doc) => {
+      times.push(doc.data());
+    });
+    response.status(200).json(times);
+  },
+);

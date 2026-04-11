@@ -3,6 +3,36 @@ part of 'soccerteamlist.dart';
 class _SoccerTeamListState extends State<SoccerTeamList> {
   final List<SoccerTeam> _teams = [];
 
+  @override
+  void initState() {
+    super.initState();
+    _loadTeams();
+  }
+
+  Future<void> _loadTeams() async {
+    try {
+      final teams = await TeamApiService.fetchTeams();
+      if (!mounted) {
+        return;
+      }
+
+      setState(() {
+        _teams
+          ..clear()
+          ..addAll(teams);
+      });
+    } catch (_) {
+      if (!mounted) {
+        return;
+      }
+      ScaffoldMessenger.of(context)
+        ..clearSnackBars()
+        ..showSnackBar(
+          const SnackBar(content: Text('Erro ao carregar times.')),
+        );
+    }
+  }
+
   Future<void> _navigateToAddTeam() async {
     final SoccerTeam? newTeam = await Navigator.push<SoccerTeam>(
       context,
@@ -16,9 +46,10 @@ class _SoccerTeamListState extends State<SoccerTeamList> {
           return;
         }
 
-        setState(() {
-          _teams.add(newTeam);
-        });
+        await _loadTeams();
+        if (!mounted) {
+          return;
+        }
 
         ScaffoldMessenger.of(context)
           ..clearSnackBars()
@@ -61,47 +92,13 @@ class _SoccerTeamListState extends State<SoccerTeamList> {
         padding: const EdgeInsets.all(12),
         itemBuilder: (context, index) {
           final team = _teams[index];
-          return Dismissible(
+          return Card(
             key: ValueKey('${team.name}-${team.foundationYear}-$index'),
-            direction: DismissDirection.startToEnd,
-            background: Container(
-              color: Colors.green,
-              alignment: Alignment.centerLeft,
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: const Icon(Icons.archive, color: Colors.white),
-            ),
-            onDismissed: (direction) {
-              final removedTeam = team;
-              final removedIndex = index;
-
-              setState(() {
-                _teams.removeAt(index);
-              });
-
-              ScaffoldMessenger.of(context)
-                ..clearSnackBars()
-                ..showSnackBar(
-                  SnackBar(
-                    content: Text('Time "${removedTeam.name}" removido.'),
-                    duration: const Duration(seconds: 10),
-                    action: SnackBarAction(
-                      label: 'Desfazer',
-                      onPressed: () {
-                        setState(() {
-                          _teams.insert(removedIndex, removedTeam);
-                        });
-                      },
-                    ),
-                  ),
-                );
-            },
-            child: Card(
-              margin: const EdgeInsets.symmetric(vertical: 8),
-              child: ListTile(
-                title: Text(team.name),
-                subtitle: Text('Fundado em ${team.foundationYear}'),
-                leading: const Icon(Icons.sports_soccer),
-              ),
+            margin: const EdgeInsets.symmetric(vertical: 8),
+            child: ListTile(
+              title: Text(team.name),
+              subtitle: Text('Fundado em ${team.foundationYear}'),
+              leading: const Icon(Icons.sports_soccer),
             ),
           );
         },
