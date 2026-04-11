@@ -10,9 +10,31 @@ class _SoccerTeamListState extends State<SoccerTeamList> {
     );
 
     if (newTeam != null) {
-      setState(() {
-        _teams.add(newTeam);
-      });
+      try {
+        await TeamApiService.addTeam(newTeam);
+        if (!mounted) {
+          return;
+        }
+
+        setState(() {
+          _teams.add(newTeam);
+        });
+
+        ScaffoldMessenger.of(context)
+          ..clearSnackBars()
+          ..showSnackBar(
+            const SnackBar(content: Text('Time salvo com sucesso.')),
+          );
+      } catch (_) {
+        if (!mounted) {
+          return;
+        }
+        ScaffoldMessenger.of(context)
+          ..clearSnackBars()
+          ..showSnackBar(
+            const SnackBar(content: Text('Erro ao salvar no servidor.')),
+          );
+      }
     }
   }
 
