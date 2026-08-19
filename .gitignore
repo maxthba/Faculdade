@@ -1,2 +1,21 @@
 **/node_modules/
 **/dist/
+
+# Java compiled classes
+**/*.class
+
+# Java build folders
+**/bin/
+**/out/
+**/target/
+**/build/
+
+# IDE files
+**/.vscode/
+**/.classpath
+**/.project
+**/.settings/
+
+# JARs
+**/*.jar
+**/*.war
