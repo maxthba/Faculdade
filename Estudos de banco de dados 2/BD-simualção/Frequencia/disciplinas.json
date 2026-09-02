@@ -1,0 +1,661 @@
+[
+    {
+        "codigo":  "12490-P",
+        "nome":  "Estudos de Bancos de Dados 2 - Prática",
+        "cargaHorariaTotal":  40,
+        "curso":  "Engenharia de Software",
+        "periodo":  4,
+        "anoCalendario":  2026,
+        "semestreCalendario":  2,
+        "turmas":  [
+                       {
+                           "codigo":  "0101",
+                           "qtdeInicialDeMatriculados":  30,
+                           "qtdeAtualDeMatriculados":  29,
+                           "trancamentos":  0,
+                           "desistencias":  0,
+                           "transferencias":  1,
+                           "docente":  {
+                                           "RP":  "4567890",
+                                           "nome":  "Steve Jobs"
+                                       },
+                           "agendaDeAulas":  [
+                                                 {
+                                                     "dataHoraInicio":  "2026-08-01T08:00:00",
+                                                     "dataHoraFim":  "2026-08-01T09:40:00",
+                                                     "qtdeHorasAula":  2
+                                                 },
+                                                 {
+                                                     "dataHoraInicio":  "2026-08-07T08:00:00",
+                                                     "dataHoraFim":  "2026-08-07T09:40:00",
+                                                     "qtdeHorasAula":  2
+                                                 }
+                                             ]
+                       },
+                       {
+                           "codigo":  "0102",
+                           "qtdeInicialDeMatriculados":  40,
+                           "qtdeAtualDeMatriculados":  40,
+                           "trancamentos":  0,
+                           "desistencias":  0,
+                           "transferencias":  0,
+                           "docente":  {
+                                           "RP":  "890392",
+                                           "nome":  "Ada Lovelace"
+                                       },
+                           "agendaDeAulas":  [
+                                                 {
+                                                     "dataHoraInicio":  "2026-08-02T10:00:00",
+                                                     "dataHoraFim":  "2026-08-02T11:40:00",
+                                                     "qtdeHorasAula":  2
+                                                 },
+                                                 {
+                                                     "dataHoraInicio":  "2026-08-08T10:00:00",
+                                                     "dataHoraFim":  "2026-08-08T11:40:00",
+                                                     "qtdeHorasAula":  2
+                                                 }
+                                             ]
+                       }
+                   ]
+    },
+    {
+        "codigo":  "20001-P",
+        "nome":  "Fundamentos de Dados",
+        "cargaHorariaTotal":  40,
+        "curso":  "Engenharia de Software",
+        "periodo":  4,
+        "anoCalendario":  2026,
+        "semestreCalendario":  2,
+        "turmas":  [
+                       {
+                           "codigo":  "0201",
+                           "qtdeInicialDeMatriculados":  1,
+                           "qtdeAtualDeMatriculados":  1,
+                           "trancamentos":  0,
+                           "desistencias":  0,
+                           "transferencias":  0,
+                           "docente":  {
+                                           "RP":  "7000001",
+                                           "nome":  "Mariana Alves"
+                                       },
+                           "agendaDeAulas":  [
+                                                 {
+                                                     "dataHoraInicio":  "2026-09-01T19:00:00",
+                                                     "dataHoraFim":  "2026-09-01T20:40:00",
+                                                     "qtdeHorasAula":  2
+                                                 }
+                                             ]
+                       }
+                   ]
+    },
+    {
+        "codigo":  "20002-P",
+        "nome":  "Modelagem de Sistemas",
+        "cargaHorariaTotal":  40,
+        "curso":  "Engenharia de Software",
+        "periodo":  4,
+        "anoCalendario":  2026,
+        "semestreCalendario":  2,
+        "turmas":  [
+                       {
+                           "codigo":  "0202",
+                           "qtdeInicialDeMatriculados":  1,
+                           "qtdeAtualDeMatriculados":  1,
+                           "trancamentos":  0,
+                           "desistencias":  0,
+                           "transferencias":  0,
+                           "docente":  {
+                                           "RP":  "7000002",
+                                           "nome":  "Rafael Carvalho"
+                                       },
+                           "agendaDeAulas":  [
+                                                 {
+                                                     "dataHoraInicio":  "2026-09-02T19:00:00",
+                                                     "dataHoraFim":  "2026-09-02T20:40:00",
+                                                     "qtdeHorasAula":  2
+                                                 }
+                                             ]
+                       }
+                   ]
+    },
+    {
+        "codigo":  "20003-P",
+        "nome":  "Programacao Estruturada",
+        "cargaHorariaTotal":  40,
+        "curso":  "Engenharia de Software",
+        "periodo":  4,
+        "anoCalendario":  2026,
+        "semestreCalendario":  2,
+        "turmas":  [
+                       {
+                           "codigo":  "0203",
+                           "qtdeInicialDeMatriculados":  1,
+                           "qtdeAtualDeMatriculados":  1,
+                           "trancamentos":  0,
+                           "desistencias":  0,
+                           "transferencias":  0,
+                           "docente":  {
+                                           "RP":  "7000003",
+                                           "nome":  "Beatriz Mendes"
+                                       },
+                           "agendaDeAulas":  [
+                                                 {
+                                                     "dataHoraInicio":  "2026-09-03T19:00:00",
+                                                     "dataHoraFim":  "2026-09-03T20:40:00",
+                                                     "qtdeHorasAula":  2
+                                                 }
+                                             ]
+                       }
+                   ]
+    },
+    {
+        "codigo":  "20004-P",
+        "nome":  "Redes de Computadores",
+        "cargaHorariaTotal":  40,
+        "curso":  "Engenharia de Software",
+        "periodo":  4,
+        "anoCalendario":  2026,
+        "semestreCalendario":  2,
+        "turmas":  [
+                       {
+                           "codigo":  "0204",
+                           "qtdeInicialDeMatriculados":  1,
+                           "qtdeAtualDeMatriculados":  1,
+                           "trancamentos":  0,
+                           "desistencias":  0,
+                           "transferencias":  0,
+                           "docente":  {
+                                           "RP":  "7000004",
+                                           "nome":  "Lucas Araujo"
+                                       },
+                           "agendaDeAulas":  [
+                                                 {
+                                                     "dataHoraInicio":  "2026-09-04T19:00:00",
+                                                     "dataHoraFim":  "2026-09-04T20:40:00",
+                                                     "qtdeHorasAula":  2
+                                                 }
+                                             ]
+                       }
+                   ]
+    },
+    {
+        "codigo":  "20005-P",
+        "nome":  "Engenharia de Requisitos",
+        "cargaHorariaTotal":  40,
+        "curso":  "Engenharia de Software",
+        "periodo":  4,
+        "anoCalendario":  2026,
+        "semestreCalendario":  2,
+        "turmas":  [
+                       {
+                           "codigo":  "0205",
+                           "qtdeInicialDeMatriculados":  1,
+                           "qtdeAtualDeMatriculados":  1,
+                           "trancamentos":  0,
+                           "desistencias":  0,
+                           "transferencias":  0,
+                           "docente":  {
+                                           "RP":  "7000005",
+                                           "nome":  "Fernanda Costa"
+                                       },
+                           "agendaDeAulas":  [
+                                                 {
+                                                     "dataHoraInicio":  "2026-09-05T19:00:00",
+                                                     "dataHoraFim":  "2026-09-05T20:40:00",
+                                                     "qtdeHorasAula":  2
+                                                 }
+                                             ]
+                       }
+                   ]
+    },
+    {
+        "codigo":  "20006-P",
+        "nome":  "Testes de Software",
+        "cargaHorariaTotal":  40,
+        "curso":  "Engenharia de Software",
+        "periodo":  4,
+        "anoCalendario":  2026,
+        "semestreCalendario":  2,
+        "turmas":  [
+                       {
+                           "codigo":  "0206",
+                           "qtdeInicialDeMatriculados":  1,
+                           "qtdeAtualDeMatriculados":  1,
+                           "trancamentos":  0,
+                           "desistencias":  0,
+                           "transferencias":  0,
+                           "docente":  {
+                                           "RP":  "7000006",
+                                           "nome":  "Gustavo Nunes"
+                                       },
+                           "agendaDeAulas":  [
+                                                 {
+                                                     "dataHoraInicio":  "2026-09-06T19:00:00",
+                                                     "dataHoraFim":  "2026-09-06T20:40:00",
+                                                     "qtdeHorasAula":  2
+                                                 }
+                                             ]
+                       }
+                   ]
+    },
+    {
+        "codigo":  "20007-P",
+        "nome":  "Seguranca da Informacao",
+        "cargaHorariaTotal":  40,
+        "curso":  "Engenharia de Software",
+        "periodo":  4,
+        "anoCalendario":  2026,
+        "semestreCalendario":  2,
+        "turmas":  [
+                       {
+                           "codigo":  "0207",
+                           "qtdeInicialDeMatriculados":  1,
+                           "qtdeAtualDeMatriculados":  1,
+                           "trancamentos":  0,
+                           "desistencias":  0,
+                           "transferencias":  0,
+                           "docente":  {
+                                           "RP":  "7000007",
+                                           "nome":  "Patricia Oliveira"
+                                       },
+                           "agendaDeAulas":  [
+                                                 {
+                                                     "dataHoraInicio":  "2026-09-07T19:00:00",
+                                                     "dataHoraFim":  "2026-09-07T20:40:00",
+                                                     "qtdeHorasAula":  2
+                                                 }
+                                             ]
+                       }
+                   ]
+    },
+    {
+        "codigo":  "20008-P",
+        "nome":  "Arquitetura de Software",
+        "cargaHorariaTotal":  40,
+        "curso":  "Engenharia de Software",
+        "periodo":  4,
+        "anoCalendario":  2026,
+        "semestreCalendario":  2,
+        "turmas":  [
+                       {
+                           "codigo":  "0208",
+                           "qtdeInicialDeMatriculados":  1,
+                           "qtdeAtualDeMatriculados":  1,
+                           "trancamentos":  0,
+                           "desistencias":  0,
+                           "transferencias":  0,
+                           "docente":  {
+                                           "RP":  "7000008",
+                                           "nome":  "Ricardo Santos"
+                                       },
+                           "agendaDeAulas":  [
+                                                 {
+                                                     "dataHoraInicio":  "2026-09-08T19:00:00",
+                                                     "dataHoraFim":  "2026-09-08T20:40:00",
+                                                     "qtdeHorasAula":  2
+                                                 }
+                                             ]
+                       }
+                   ]
+    },
+    {
+        "codigo":  "20009-P",
+        "nome":  "Desenvolvimento Web",
+        "cargaHorariaTotal":  40,
+        "curso":  "Engenharia de Software",
+        "periodo":  4,
+        "anoCalendario":  2026,
+        "semestreCalendario":  2,
+        "turmas":  [
+                       {
+                           "codigo":  "0209",
+                           "qtdeInicialDeMatriculados":  1,
+                           "qtdeAtualDeMatriculados":  1,
+                           "trancamentos":  0,
+                           "desistencias":  0,
+                           "transferencias":  0,
+                           "docente":  {
+                                           "RP":  "7000009",
+                                           "nome":  "Juliana Martins"
+                                       },
+                           "agendaDeAulas":  [
+                                                 {
+                                                     "dataHoraInicio":  "2026-09-09T19:00:00",
+                                                     "dataHoraFim":  "2026-09-09T20:40:00",
+                                                     "qtdeHorasAula":  2
+                                                 }
+                                             ]
+                       }
+                   ]
+    },
+    {
+        "codigo":  "20010-P",
+        "nome":  "Analise de Dados",
+        "cargaHorariaTotal":  40,
+        "curso":  "Engenharia de Software",
+        "periodo":  4,
+        "anoCalendario":  2026,
+        "semestreCalendario":  2,
+        "turmas":  [
+                       {
+                           "codigo":  "0210",
+                           "qtdeInicialDeMatriculados":  1,
+                           "qtdeAtualDeMatriculados":  1,
+                           "trancamentos":  0,
+                           "desistencias":  0,
+                           "transferencias":  0,
+                           "docente":  {
+                                           "RP":  "7000010",
+                                           "nome":  "Thiago Ribeiro"
+                                       },
+                           "agendaDeAulas":  [
+                                                 {
+                                                     "dataHoraInicio":  "2026-09-10T19:00:00",
+                                                     "dataHoraFim":  "2026-09-10T20:40:00",
+                                                     "qtdeHorasAula":  2
+                                                 }
+                                             ]
+                       }
+                   ]
+    },
+    {
+        "codigo":  "20011-P",
+        "nome":  "Computacao em Nuvem",
+        "cargaHorariaTotal":  40,
+        "curso":  "Engenharia de Software",
+        "periodo":  4,
+        "anoCalendario":  2026,
+        "semestreCalendario":  2,
+        "turmas":  [
+                       {
+                           "codigo":  "0211",
+                           "qtdeInicialDeMatriculados":  1,
+                           "qtdeAtualDeMatriculados":  1,
+                           "trancamentos":  0,
+                           "desistencias":  0,
+                           "transferencias":  0,
+                           "docente":  {
+                                           "RP":  "7000011",
+                                           "nome":  "Renata Barros"
+                                       },
+                           "agendaDeAulas":  [
+                                                 {
+                                                     "dataHoraInicio":  "2026-09-11T19:00:00",
+                                                     "dataHoraFim":  "2026-09-11T20:40:00",
+                                                     "qtdeHorasAula":  2
+                                                 }
+                                             ]
+                       }
+                   ]
+    },
+    {
+        "codigo":  "20012-P",
+        "nome":  "Sistemas Distribuidos",
+        "cargaHorariaTotal":  40,
+        "curso":  "Engenharia de Software",
+        "periodo":  4,
+        "anoCalendario":  2026,
+        "semestreCalendario":  2,
+        "turmas":  [
+                       {
+                           "codigo":  "0212",
+                           "qtdeInicialDeMatriculados":  1,
+                           "qtdeAtualDeMatriculados":  1,
+                           "trancamentos":  0,
+                           "desistencias":  0,
+                           "transferencias":  0,
+                           "docente":  {
+                                           "RP":  "7000012",
+                                           "nome":  "Eduardo Freitas"
+                                       },
+                           "agendaDeAulas":  [
+                                                 {
+                                                     "dataHoraInicio":  "2026-09-12T19:00:00",
+                                                     "dataHoraFim":  "2026-09-12T20:40:00",
+                                                     "qtdeHorasAula":  2
+                                                 }
+                                             ]
+                       }
+                   ]
+    },
+    {
+        "codigo":  "20013-P",
+        "nome":  "Inteligencia Artificial",
+        "cargaHorariaTotal":  40,
+        "curso":  "Engenharia de Software",
+        "periodo":  4,
+        "anoCalendario":  2026,
+        "semestreCalendario":  2,
+        "turmas":  [
+                       {
+                           "codigo":  "0213",
+                           "qtdeInicialDeMatriculados":  1,
+                           "qtdeAtualDeMatriculados":  1,
+                           "trancamentos":  0,
+                           "desistencias":  0,
+                           "transferencias":  0,
+                           "docente":  {
+                                           "RP":  "7000013",
+                                           "nome":  "Larissa Gomes"
+                                       },
+                           "agendaDeAulas":  [
+                                                 {
+                                                     "dataHoraInicio":  "2026-09-13T19:00:00",
+                                                     "dataHoraFim":  "2026-09-13T20:40:00",
+                                                     "qtdeHorasAula":  2
+                                                 }
+                                             ]
+                       }
+                   ]
+    },
+    {
+        "codigo":  "20014-P",
+        "nome":  "Experiencia do Usuario",
+        "cargaHorariaTotal":  40,
+        "curso":  "Engenharia de Software",
+        "periodo":  4,
+        "anoCalendario":  2026,
+        "semestreCalendario":  2,
+        "turmas":  [
+                       {
+                           "codigo":  "0214",
+                           "qtdeInicialDeMatriculados":  1,
+                           "qtdeAtualDeMatriculados":  1,
+                           "trancamentos":  0,
+                           "desistencias":  0,
+                           "transferencias":  0,
+                           "docente":  {
+                                           "RP":  "7000014",
+                                           "nome":  "Daniel Teixeira"
+                                       },
+                           "agendaDeAulas":  [
+                                                 {
+                                                     "dataHoraInicio":  "2026-09-14T19:00:00",
+                                                     "dataHoraFim":  "2026-09-14T20:40:00",
+                                                     "qtdeHorasAula":  2
+                                                 }
+                                             ]
+                       }
+                   ]
+    },
+    {
+        "codigo":  "20015-P",
+        "nome":  "Gestao de Projetos",
+        "cargaHorariaTotal":  40,
+        "curso":  "Engenharia de Software",
+        "periodo":  4,
+        "anoCalendario":  2026,
+        "semestreCalendario":  2,
+        "turmas":  [
+                       {
+                           "codigo":  "0215",
+                           "qtdeInicialDeMatriculados":  1,
+                           "qtdeAtualDeMatriculados":  1,
+                           "trancamentos":  0,
+                           "desistencias":  0,
+                           "transferencias":  0,
+                           "docente":  {
+                                           "RP":  "7000015",
+                                           "nome":  "Carolina Dias"
+                                       },
+                           "agendaDeAulas":  [
+                                                 {
+                                                     "dataHoraInicio":  "2026-09-15T19:00:00",
+                                                     "dataHoraFim":  "2026-09-15T20:40:00",
+                                                     "qtdeHorasAula":  2
+                                                 }
+                                             ]
+                       }
+                   ]
+    },
+    {
+        "codigo":  "20016-P",
+        "nome":  "DevOps",
+        "cargaHorariaTotal":  40,
+        "curso":  "Engenharia de Software",
+        "periodo":  4,
+        "anoCalendario":  2026,
+        "semestreCalendario":  2,
+        "turmas":  [
+                       {
+                           "codigo":  "0216",
+                           "qtdeInicialDeMatriculados":  1,
+                           "qtdeAtualDeMatriculados":  1,
+                           "trancamentos":  0,
+                           "desistencias":  0,
+                           "transferencias":  0,
+                           "docente":  {
+                                           "RP":  "7000016",
+                                           "nome":  "Marcelo Batista"
+                                       },
+                           "agendaDeAulas":  [
+                                                 {
+                                                     "dataHoraInicio":  "2026-09-16T19:00:00",
+                                                     "dataHoraFim":  "2026-09-16T20:40:00",
+                                                     "qtdeHorasAula":  2
+                                                 }
+                                             ]
+                       }
+                   ]
+    },
+    {
+        "codigo":  "20017-P",
+        "nome":  "Banco de Dados Avancado",
+        "cargaHorariaTotal":  40,
+        "curso":  "Engenharia de Software",
+        "periodo":  4,
+        "anoCalendario":  2026,
+        "semestreCalendario":  2,
+        "turmas":  [
+                       {
+                           "codigo":  "0217",
+                           "qtdeInicialDeMatriculados":  1,
+                           "qtdeAtualDeMatriculados":  1,
+                           "trancamentos":  0,
+                           "desistencias":  0,
+                           "transferencias":  0,
+                           "docente":  {
+                                           "RP":  "7000017",
+                                           "nome":  "Vanessa Campos"
+                                       },
+                           "agendaDeAulas":  [
+                                                 {
+                                                     "dataHoraInicio":  "2026-09-17T19:00:00",
+                                                     "dataHoraFim":  "2026-09-17T20:40:00",
+                                                     "qtdeHorasAula":  2
+                                                 }
+                                             ]
+                       }
+                   ]
+    },
+    {
+        "codigo":  "20018-P",
+        "nome":  "Programacao Orientada a Objetos",
+        "cargaHorariaTotal":  40,
+        "curso":  "Engenharia de Software",
+        "periodo":  4,
+        "anoCalendario":  2026,
+        "semestreCalendario":  2,
+        "turmas":  [
+                       {
+                           "codigo":  "0218",
+                           "qtdeInicialDeMatriculados":  1,
+                           "qtdeAtualDeMatriculados":  1,
+                           "trancamentos":  0,
+                           "desistencias":  0,
+                           "transferencias":  0,
+                           "docente":  {
+                                           "RP":  "7000018",
+                                           "nome":  "Felipe Rocha"
+                                       },
+                           "agendaDeAulas":  [
+                                                 {
+                                                     "dataHoraInicio":  "2026-09-18T19:00:00",
+                                                     "dataHoraFim":  "2026-09-18T20:40:00",
+                                                     "qtdeHorasAula":  2
+                                                 }
+                                             ]
+                       }
+                   ]
+    },
+    {
+        "codigo":  "20019-P",
+        "nome":  "Qualidade de Software",
+        "cargaHorariaTotal":  40,
+        "curso":  "Engenharia de Software",
+        "periodo":  4,
+        "anoCalendario":  2026,
+        "semestreCalendario":  2,
+        "turmas":  [
+                       {
+                           "codigo":  "0219",
+                           "qtdeInicialDeMatriculados":  1,
+                           "qtdeAtualDeMatriculados":  1,
+                           "trancamentos":  0,
+                           "desistencias":  0,
+                           "transferencias":  0,
+                           "docente":  {
+                                           "RP":  "7000019",
+                                           "nome":  "Aline Moreira"
+                                       },
+                           "agendaDeAulas":  [
+                                                 {
+                                                     "dataHoraInicio":  "2026-09-19T19:00:00",
+                                                     "dataHoraFim":  "2026-09-19T20:40:00",
+                                                     "qtdeHorasAula":  2
+                                                 }
+                                             ]
+                       }
+                   ]
+    },
+    {
+        "codigo":  "20020-P",
+        "nome":  "Etica e Tecnologia",
+        "cargaHorariaTotal":  40,
+        "curso":  "Engenharia de Software",
+        "periodo":  4,
+        "anoCalendario":  2026,
+        "semestreCalendario":  2,
+        "turmas":  [
+                       {
+                           "codigo":  "0220",
+                           "qtdeInicialDeMatriculados":  1,
+                           "qtdeAtualDeMatriculados":  1,
+                           "trancamentos":  0,
+                           "desistencias":  0,
+                           "transferencias":  0,
+                           "docente":  {
+                                           "RP":  "7000020",
+                                           "nome":  "Bruno Cardoso"
+                                       },
+                           "agendaDeAulas":  [
+                                                 {
+                                                     "dataHoraInicio":  "2026-09-20T19:00:00",
+                                                     "dataHoraFim":  "2026-09-20T20:40:00",
+                                                     "qtdeHorasAula":  2
+                                                 }
+                                             ]
+                       }
+                   ]
+    }
+]
