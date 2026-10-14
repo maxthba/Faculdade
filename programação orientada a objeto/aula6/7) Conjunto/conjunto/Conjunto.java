@@ -1,80 +1,81 @@
 package conjunto;
 
-// import clonador.*;
 import clonador.Clonador;
 
 public class Conjunto <X> implements Cloneable
 {
     protected Object[] elem;
-    protected int qtd=0;
+    protected int qtd = 0;
     protected int capacidadeInicial;
-        
-    public /*void*/ Conjunto (int capacidadeInicial) throws Exception
+
+    public Conjunto (int capacidadeInicial) throws Exception
     {
-        if (capacidadeInicial<=0) throw new Exception ("Capacidade invalida");
-            
+        if (capacidadeInicial <= 0)
+            throw new Exception ("Capacidade invalida");
+
         this.elem = new Object [capacidadeInicial];
-        
         this.capacidadeInicial = capacidadeInicial;
     }
 
-    public /*void*/ Conjunto () // construtor padrão (construtor sem parâmetros)
+    public Conjunto ()
     {
         this.elem = new Object [10];
-        
         this.capacidadeInicial = 10;
     }
 
     protected void redimensioneSe (int novaCap)
     {
+        if (novaCap <= 0)
+            novaCap = 1;
+
         Object[] novo = new Object [novaCap];
 
-        for (int i=0; i<this.qtd; i++)
+        for (int i = 0; i < this.qtd; i++)
             novo[i] = this.elem[i];
 
         this.elem = novo;
-        // System.gc();
     }
 
-    // faz busca sequencial e retorna true, indicando que achou o que era procurado e,
-    // junto com o true, a posição onde foi encontrado o que era procurado; ou
-    // retorna false, indicando que NÃO achou o que era procurado e,
-    // junto com o false, a posição onde é possível incluir aquilo que era procurado
-    // e NÃO foi encontrado, caso seja do nosso desejo incluir
     protected Object[] ondeEsta (X x)
     {
-        for (int i=0; i<this.qtd; i++)
-            if (x.equals(this.elem[i]))
+        if (x == null)
+            return new Object[] {false, this.qtd};
+
+        for (int i = 0; i < this.qtd; i++)
+        {
+            if (this.elem[i] != null && x.equals(this.elem[i]))
             {
-                Object[] ret = {true,i};
+                Object[] ret = {true, i};
                 return ret;
             }
+        }
 
-        Object[] ret = {false,this.qtd};
+        Object[] ret = {false, this.qtd};
         return ret;
     }
-    
+
     public void inclua (X x) throws Exception
     {
-        if (x==null) throw new Exception ("Elemento ausente");
+        if (x == null)
+            throw new Exception ("Elemento ausente");
 
-        Object[] onde    = this.ondeEsta(x);
-        boolean  achou   = (Boolean)onde[0];
-        int      posicao = (Integer)onde[1];
+        Object[] onde = this.ondeEsta(x);
+        boolean achou = (Boolean)onde[0];
+        int posicao = (Integer)onde[1];
 
-        if (achou) throw new Exception ("Elemento repetido");
+        if (achou)
+            throw new Exception ("Elemento repetido");
 
-        if (this.qtd==this.elem.length)
-            this.redimensioneSe (2*this.elem.length);
+        if (this.qtd == this.elem.length)
+            this.redimensioneSe (2 * this.elem.length);
 
-        for (int i=posicao; i<this.qtd; i++)
-            this.elem[i+1] = this.elem[i];
+        for (int i = posicao; i < this.qtd; i++)
+            this.elem[i + 1] = this.elem[i];
 
         if (x instanceof Cloneable)
         {
-            Clonador<X> clonador = new Clonador<X> (); // aprender clonador na aula que vem
-          //this.elem[posicao] = (X)x.clone(); // vai dar erro, pois Object nao tem clone
-            this.elem[posicao] = clonador.clone (x);
+            Clonador<X> clonador = new Clonador<X>();
+            this.elem[posicao] = clonador.clone(x);
         }
         else
             this.elem[posicao] = x;
@@ -84,13 +85,13 @@ public class Conjunto <X> implements Cloneable
 
     public X getElemento (int posicao) throws Exception
     {
-        if (posicao<0 || posicao>=this.qtd)
+        if (posicao < 0 || posicao >= this.qtd)
             throw new Exception ("Posicao invalida");
-            
+
         if (this.elem[posicao] instanceof Cloneable)
         {
-            Clonador<X> clonador = new Clonador<X> (); // aprender clonador na aula que vem
-            return clonador.clone ((X)this.elem[posicao]);
+            Clonador<X> clonador = new Clonador<X>();
+            return clonador.clone((X)this.elem[posicao]);
         }
         else
             return (X)this.elem[posicao];
@@ -98,24 +99,24 @@ public class Conjunto <X> implements Cloneable
 
     public void remova (X x) throws Exception
     {
-        if (x==null)
+        if (x == null)
             throw new Exception ("Elemento ausente");
-            
-        Object[] onde    = this.ondeEsta(x);
-        boolean  achou   = (Boolean)onde[0];
-        int      posicao = (Integer)onde[1];
-        
+
+        Object[] onde = this.ondeEsta(x);
+        boolean achou = (Boolean)onde[0];
+        int posicao = (Integer)onde[1];
+
         if (!achou)
             throw new Exception ("Elemento inexistente");
-        
-        for (int i=posicao; i<this.qtd-1; i++)
-            this.elem[i] = this.elem[i+1];
-        
+
+        for (int i = posicao; i < this.qtd - 1; i++)
+            this.elem[i] = this.elem[i + 1];
+
         this.qtd--;
         this.elem[this.qtd] = null;
-        
-        if (this.elem.length>this.capacidadeInicial && this.qtd<=(int)(0.25*this.elem.length))
-            this.redimensioneSe (this.elem.length/2);
+
+        if (this.elem.length > this.capacidadeInicial && this.qtd <= (int)(0.25 * this.elem.length))
+            this.redimensioneSe (Math.max(1, this.elem.length / 2));
     }
 
     public int getQtdElementos ()
@@ -123,18 +124,16 @@ public class Conjunto <X> implements Cloneable
         return this.qtd;
     }
 
-    // retornar uma instancia de conjunto com todos os elementos do
-    // this e mais todos os elementos do conj, sem repetição de elementos
     public Conjunto<X> uniao (Conjunto<X> conj) throws Exception
     {
-        if (conj==null)
+        if (conj == null)
             throw new Exception ("Conjunto ausente");
 
-        Conjunto<X> ret = new Conjunto<X> (this.qtd+conj.qtd);
+        Conjunto<X> ret = new Conjunto<X> (Math.max(1, this.qtd + conj.qtd));
 
         Conjunto<X> menor, maior;
 
-        if (this.qtd<conj.qtd)
+        if (this.qtd < conj.qtd)
         {
             menor = this;
             maior = conj;
@@ -146,35 +145,33 @@ public class Conjunto <X> implements Cloneable
         }
 
         ret.qtd = maior.qtd;
-        for (int i=0; i<maior.qtd; i++)
+        for (int i = 0; i < maior.qtd; i++)
             ret.elem[i] = maior.elem[i];
 
-        int posicao=ret.qtd;
-        for (int i=0; i<menor.qtd; i++)
+        int posicao = ret.qtd;
+        for (int i = 0; i < menor.qtd; i++)
         {
             Object[] onde = ret.ondeEsta((X)menor.elem[i]);
-            boolean achou=(Boolean)onde[0];
+            boolean achou = (Boolean)onde[0];
 
             if (!achou)
             {
-                ret.elem[posicao++]=menor.elem[i];
+                ret.elem[posicao++] = menor.elem[i];
                 ret.qtd++;
             }
         }
 
         return ret;
-    } 
-     
-    // retornar uma instancia de conjunto com os elementos comuns
-    // ao this e ao conj
+    }
+
     public Conjunto<X> interseccao (Conjunto<X> conj) throws Exception
     {
-        if (conj==null)
+        if (conj == null)
             throw new Exception ("Conjunto ausente");
 
         Conjunto<X> menor, maior;
 
-        if (this.qtd<conj.qtd)
+        if (this.qtd < conj.qtd)
         {
             menor = this;
             maior = conj;
@@ -185,42 +182,40 @@ public class Conjunto <X> implements Cloneable
             maior = this;
         }
 
-        Conjunto<X> ret = new Conjunto<X> (menor.qtd);
+        Conjunto<X> ret = new Conjunto<X> (Math.max(1, menor.qtd));
 
-        int posicao=ret.qtd;
-        for (int i=0; i<menor.qtd; i++)
+        int posicao = ret.qtd;
+        for (int i = 0; i < menor.qtd; i++)
         {
             Object[] onde = maior.ondeEsta((X)menor.elem[i]);
-            boolean achou=(Boolean)onde[0];
+            boolean achou = (Boolean)onde[0];
 
             if (achou)
             {
-                ret.elem[posicao++]=menor.elem[i];
+                ret.elem[posicao++] = menor.elem[i];
                 ret.qtd++;
             }
         }
 
         return ret;
-    }    
-    
-    // retornar uma instancia de  conjunto com todos os elementos
-    // do this que não são também elementos do conj
+    }
+
     public Conjunto<X> menos (Conjunto<X> conj) throws Exception
     {
-        if (conj==null)
+        if (conj == null)
             throw new Exception ("Conjunto ausente");
 
-        Conjunto<X> ret = new Conjunto<X> (this.qtd);
+        Conjunto<X> ret = new Conjunto<X> (Math.max(1, this.qtd));
 
-        int posicao=0;
-        for (int i=0; i<this.qtd; i++)
+        int posicao = 0;
+        for (int i = 0; i < this.qtd; i++)
         {
             Object[] onde = conj.ondeEsta((X)this.elem[i]);
-            boolean achou=(Boolean)onde[0];
+            boolean achou = (Boolean)onde[0];
 
             if (!achou)
             {
-                ret.elem[posicao++]=this.elem[i];
+                ret.elem[posicao++] = this.elem[i];
                 ret.qtd++;
             }
         }
@@ -228,134 +223,120 @@ public class Conjunto <X> implements Cloneable
         return ret;
     }
 
-    // retornar true se o this contém o conj, ou seja se todos
-    // os elementos do conj forem também elementos do this;
-    // retornar false, caso contrário
     public boolean contem (Conjunto<X> conj) throws Exception
     {
-        if (conj==null)
+        if (conj == null)
             throw new Exception ("Conjunto ausente");
 
-        for (int i=0; i<conj.qtd; i++)
+        for (int i = 0; i < conj.qtd; i++)
         {
             Object[] onde = this.ondeEsta((X)conj.elem[i]);
-            boolean achou=(Boolean)onde[0];
+            boolean achou = (Boolean)onde[0];
 
-            if (!achou) return false;
-        }
-
-        return true;
-    }  
-    
-    // retornar true se o conj contém o this, ou seja se todos
-    // os elementos do this forem também elementos do conj;
-    // retornar false, caso contrário
-    public boolean estaContido (Conjunto<X> conj) throws Exception
-    {
-        if (conj==null)
-            throw new Exception ("Conjunto ausente");
-
-        for (int i=0; i<this.qtd; i++)
-        {
-            Object[] onde = conj.ondeEsta((X)this.elem[i]);
-            boolean achou=(Boolean)onde[0];
-
-            if (!achou) return false;
+            if (!achou)
+                return false;
         }
 
         return true;
     }
-    
+
+    public boolean estaContido (Conjunto<X> conj) throws Exception
+    {
+        if (conj == null)
+            throw new Exception ("Conjunto ausente");
+
+        for (int i = 0; i < this.qtd; i++)
+        {
+            Object[] onde = conj.ondeEsta((X)this.elem[i]);
+            boolean achou = (Boolean)onde[0];
+
+            if (!achou)
+                return false;
+        }
+
+        return true;
+    }
+
     @Override
     public String toString ()
     {
-        String ret="{";
-        
-        if (this.qtd>0)
+        String ret = "{";
+
+        if (this.qtd > 0)
             ret += this.elem[0];
-            
-        for (int i=1; i<this.qtd; i++)
-            ret += ", "+this.elem[i];
-        
-        return ret+"}";
+
+        for (int i = 1; i < this.qtd; i++)
+            ret += ", " + this.elem[i];
+
+        return ret + "}";
     }
 
     @Override
     public boolean equals (Object obj)
     {
-        if (this==obj) return true;
-        
-        if (obj==null) return false;
-        
-        if (this.getClass()!=obj.getClass()) return false;
-        
-        Conjunto<X> conj = (Conjunto<X>)obj;
-        
-        if (this.qtd!=conj.qtd) return false;
-        
-        if (this.capacidadeInicial!=conj.capacidadeInicial) return false;
-        
-        //leva em conta a ordem
-        //for (int i=0; i<this.qtd; i++)
-        //    if (!this.elem[i].equals(conj.elem[i]))
-        //        return false;
-        
+        if (this == obj)
+            return true;
 
-        // sem levar em conta a ordem
-        for (int i=0; i<conj.qtd; i++)
+        if (obj == null)
+            return false;
+
+        if (this.getClass() != obj.getClass())
+            return false;
+
+        Conjunto<?> conj = (Conjunto<?>)obj;
+
+        if (this.qtd != conj.qtd)
+            return false;
+
+        for (int i = 0; i < conj.qtd; i++)
         {
-            Object[] onde  = this.ondeEsta((X)conj.elem[i]);
-            boolean  achou = (Boolean)onde[0];
+            Object[] onde = this.ondeEsta((X)conj.elem[i]);
+            boolean achou = (Boolean)onde[0];
 
-            if (!achou) return false;
+            if (!achou)
+                return false;
         }
-                
+
         return true;
     }
 
     @Override
     public int hashCode ()
     {
-        int ret=1;
-        
-        ret = 13*ret + ((Integer)this.qtd       ).hashCode();
-        ret = 13*ret + ((Integer)this.capacidadeInicial).hashCode();
-        
-        for (int i=0; i<this.qtd; i++)
-          //if (this.elem[i]!=null)
-               ret = 7*ret + this.elem[i].hashCode();
-               
-        if (ret<0) ret=-ret;
-        return ret;    
+        int ret = 1;
+
+        for (int i = 0; i < this.qtd; i++)
+            ret = 31 * ret + ((this.elem[i] == null) ? 0 : this.elem[i].hashCode());
+
+        if (ret < 0)
+            ret = -ret;
+
+        return ret;
     }
 
-    //construtor de copia
     public Conjunto (Conjunto<X> modelo) throws Exception
     {
-        if (modelo==null)
+        if (modelo == null)
             throw new Exception ("Modelo ausente");
-            
-        this.qtd               = modelo.qtd;
+
+        this.qtd = modelo.qtd;
         this.capacidadeInicial = modelo.capacidadeInicial;
-        
-        this.elem       = new Object [modelo.elem.length];
-        
-        for (int i=0; i<this.qtd; i++)
+        this.elem = new Object [modelo.elem.length];
+
+        for (int i = 0; i < this.qtd; i++)
             this.elem[i] = modelo.elem[i];
     }
-    
+
     @Override
     public Object clone ()
     {
-        Conjunto<X> ret=null;
-        
         try
         {
-            ret = new Conjunto<X> (this);
+            return new Conjunto<X> (this);
         }
         catch (Exception erro)
-        {}
-        
-        return ret;
+        {
+            return null;
+        }
     }
 }
